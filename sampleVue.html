@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html"/>
+  </head>
+
+  <body>
+    <p>One Way</p>
+    <div id="one_way">
+      <label>Enter name:</label>
+      <input type="text"/>
+      <p>{{ name }} is {{ category }}.</p>
+    </div>
+    <p>Two Way</p>
+    <div id="two_way">
+      <label for="name">Enter name:</label>
+      <input type="text" v-model="name" id="name" name="name" />
+      <p>{{ name }}'s hobby is {{ hobby }}.</p>
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./sampleVue.js"></script>
+  <script>
+
+  </script>
+</html>
