@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html"/>
+</head>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html"/>
-  </head>
+<body>
 
-  <body>
-    <p>One Way</p>
-    <div id="one_way">
-      <label>Enter name:</label>
-      <input type="text"/>
-      <p>{{ name }} is {{ category }}.</p>
-    </div>
-    <p>Two Way</p>
-    <div id="two_way">
-      <label for="name">Enter name:</label>
-      <input type="text" v-model="name" id="name" name="name" />
-      <p>{{ name }}'s hobby is {{ hobby }}.</p>
-    </div>
-  </body>
+  <p>-- One Way-----</p>
+  <div id="one_way">
+    <label>Enter name:</label>
+    <input type="text"/>
+    <p>{{ name | capitalize }} is {{ instrument }}.</p>
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="./sampleVue.js"></script>
-  <script>
+  <p>-- Two Way-----</p>
+  <div id="two_way">
+    <label>Enter name:</label>
+    <input type="text" v-model="name"/>
+    <p>{{ name | capitalize }}'s hobby is {{ hobby }}.</p>
+  </div>
 
-  </script>
+  <p>-- Filter-----</p>
+  <div id="filter">
+    <label>Enter str:</label>
+    <input type="text" v-model="str"/>
+    <p>str:{{ str }}</p>
+    <p>hex:{{ str | to_ascii }}</p>
+  </div>
+
+  <p>-- Filter Arg-----</p>
+  <div id="filter_arg">
+    <label>Enter str:</label>
+    <input type="text" v-model="str"/>
+    <label>Enter arg:</label>
+    <input type="text" v-model="arg"/>
+    <p>str:{{ str }}</p>
+    <p>arg:{{ arg }}</p>
+    <p>str + arg:{{ str | filter_test_arg arg }}</p>
+  </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+<script src="./sampleVue.js"></script>
+<script src="./sampleFilter.js"></script>
 </html>
